@@ -1,0 +1,45 @@
+{
+  "name": "@fahrizaall/v-utils",
+  "version": "0.1.0",
+  "description": "Small, typed utility functions for everyday use",
+  "license": "MIT",
+  "type": "module",
+
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+
+  "sideEffects": false,
+  "files": ["dist"],
+
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "prepublishOnly": "npm run clean && npm run build && npm run test"
+  },
+
+  "keywords": ["utils", "typescript", "helpers"],
+  "author": "",
+  "devDependencies": {
+    "@types/node": "^25.2.1",
+    "eslint": "^9.39.2",
+    "prettier": "^3.8.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fahrizaall/v-utils"
+  }
+}
